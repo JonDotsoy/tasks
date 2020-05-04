@@ -2,7 +2,6 @@
   "name": "@jondotsoy/tasks",
   "private": true,
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "mocha -r ts-node/register src/**/*.spec.ts",
@@ -10,8 +9,8 @@
     "prepare": "tsc"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Jonathan Delgado <hi@jon.soy> (https://jon.soy)",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^4.0.0",
     "lodash": "^4.17.15",
@@ -31,5 +30,15 @@
     "mocha": "^7.1.2",
     "ts-node": "^8.9.1",
     "typescript": "^3.8.3"
+  },
+  "description": "",
+  "bugs": {
+    "url": "https://github.com/JonDotsoy/tasks/issues"
+  },
+  "homepage": "https://github.com/JonDotsoy/tasks#readme",
+  "repository": {
+    "directory": "packages/@jondotsoy/tasks",
+    "type": "git",
+    "url": "git+https://github.com/JonDotsoy/tasks.git"
   }
 }
