@@ -35,9 +35,12 @@ export class Task<Driver extends Drivers = any> {
     const stylizeUndefined = (v: string) => stylize(v, 'undefined');
     const stylizeString = (v: string) => stylize(v, 'string');
 
-    const nameDriver = Object.getPrototypeOf(this.options.driver).constructor.name ?? 'Driver';
+    const nameDriver = Object.getPrototypeOf(this.options.driver)?.constructor?.name ?? 'Driver';
 
-    const label = `${stylizeSpecial('Task')} ${stylizeUndefined('<')}${stylizeString(this.options.title)}, ${nameDriver} ${inspect(this.options.driver.options, { ...options, depth: depth - 1 })}${stylizeUndefined('>')}`;
+    // @ts-ignore
+    const inspectDriver = inspect(this.options?.driver?.options ?? {}, { ...options, depth: depth - 1 });
+
+    const label = `${stylizeSpecial('Task')} ${stylizeUndefined('<')}${stylizeString(this.options.title)}, ${nameDriver} ${inspectDriver}${stylizeUndefined('>')}`;
 
     return `${label}`;
   }
